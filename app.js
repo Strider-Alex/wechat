@@ -7,7 +7,8 @@ var bodyParser = require('body-parser');
 var wechat=require("wechat")
 
 
-
+var routes = require('./routes/index');
+var users = require('./routes/users');
 var app = express();
 
 // view engine setup
@@ -24,7 +25,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.query())
 
-
+app.use('/', routes);
+app.use('/users', users);
 //wechat
 app.use('/wechat', wechat('youwillneverguess', function (req, res, next){
     //message is located in req.weixin
