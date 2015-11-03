@@ -1,79 +1,82 @@
-//wechat settings
-var config={
-    token: 'youwillneverguess'
-}
-var app_id="";
-var app_secret="";
-var API=require('wechat-api');
-var api= new API(app_id,app_secret)
-var menu=
-{   "app_id":"wxdfba50ee9864437f",
-    "app_secret":"d4624c36b6795d1d99dcf0547af5443d",
-    "button":[
-    {
-        "name":"个人查询",
-        "sub_button":[
-        {
-            type:"view",
-            name:"考试/成绩查询",
-            url:""
-        },
-        {
-            type:"view",
-            name:"我的课表"，
-            url:""
-        },
-        {
-            type:"view",
-            name:"体育锻炼",
-            url:""
-        }
-        {
-            type:"view",
-            name:"修改账号",
-            url:""
-        }]
-        
-        "name":"学在浙大",
-        "sub_button":[
-        {
-            type:"view",
-            name:"资格考试",
-            url:""
-        },
-        {
-            type:"view",
-            name:"租借教室"，
-            url:""
-        },
-        {
-            type:"view",
-            name:"学习资料",
-            url:""
-        }]
-        
-        "name":"浙大生活",
-        "sub_button":[
-        {
-            type:"view",
-            name:"四大产品",
-            url:""
-        },
-        {
-            type:"view",
-            name:"场馆开放"，
-            url:""
-        },
-        {
-            type:"view",
-            name:"游戏桌游",
-            url:""
-        }
-        {
-            type:"view",
-            name:"纳新活动",
-            url:""
-        }]
+{
+  "app_id": "wxdfba50ee9864437f",
+  "app_secret": "d4624c36b6795d1d99dcf0547af5443d",
+  "button": [
+      {
+        "name": "个人查询",
+        "sub_button": [
+          {
+            "type": "view",
+            "name": "考试/成绩查询",
+            "url": ""
+          },
+          {
+            "type": "view",
+            "name": "我的课表",
+            "url": ""
+          },
+          {
+            "type": "view",
+            "name": "体育锻炼",
+            "url": ""
+          },
+          {
+            "type": "view",
+            "name": "修改账号",
+            "url": ""
+          }
+        ]
+      },
+
+      {
+        "name": "学在浙大",
+        "sub_button": [
+          {
+            "type": "view",
+            "name": "资格考试",
+            "url": ""
+          },
+          {
+            "type": "view",
+            "name": "租借教室",
+            "url": ""
+          },
+          {
+            "type": "view",
+            "name": "学习资料",
+            "url": ""
+          }
+        ]
+      },
+
+      {
+        "name": "浙大生活",
+        "sub_button": [
+          {
+            "type": "view",
+            "name": "四大产品",
+            "url": ""
+          },
+          {
+            "type": "view",
+            "name": "场馆开放",
+            "url": ""
+          },
+          {
+            "type": "view",
+            "name": "游戏桌游",
+            "url": ""
+          },
+          {
+            "type": "view",
+            "name": "纳新活动",
+            "url": ""
+          }
+        ]
+      }
+
     
-    }]
-]}  
+  ]
+}
+
+ 
