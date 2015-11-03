@@ -27,8 +27,22 @@ app.use(express.query())
 
 app.use('/', routes);
 app.use('/users', users);
+
+
+
+
+//wechat settings
+var config=require("config");
+var menu = config.get("menu");
+var app_id=config.get("app_id");
+var app_secret=config.get("app_secret");
+
 //wechat
-app.use('/wechat', wechat('youwillneverguess', function (req, res, next){
+app.use('/wechat', wechat("youwillneverguess", function (req, res, next){
+    //creat menu
+    api.createMenu(menu, function(err,result){
+        console.log(result)
+    });
     //message is located in req.weixin
     var message=req.weixin;
     //response
