@@ -32,12 +32,15 @@ app.use('/users', users);
 
 
 //wechat settings
-var config=require("config");
-var menu = config.get("menu");
-var app_id=config.get("app_id");
-var app_secret=config.get("app_secret");
+var config=require("./config.json");
+var menu = config.menu
+var app_id=config.app_id
+var app_secret=config.app_secret
 
 //wechat
+var API=require('wechat-api');
+var api= new API(app_id,app_secret);
+
 app.use('/wechat', wechat("youwillneverguess", function (req, res, next){
     //creat menu
     api.createMenu(menu, function(err,result){
