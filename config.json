@@ -1,82 +1,89 @@
 {
   "app_id": "wxdfba50ee9864437f",
   "app_secret": "d4624c36b6795d1d99dcf0547af5443d",
+  "menu":{
   "button": [
       {
-        "name": "¸öÈË²éÑ¯",
+        "name": "ç§äººç©ºé—´",
         "sub_button": [
           {
             "type": "view",
-            "name": "¿¼ÊÔ/³É¼¨²éÑ¯",
-            "url": ""
+            "name": "æˆ‘çš„æ¡£æ¡ˆ",
+            "url": "https://www.baidu.com/"
           },
           {
             "type": "view",
-            "name": "ÎÒµÄ¿Î±í",
-            "url": ""
+            "name": "æˆ‘çš„è®¢é˜…",
+            "url": "https://www.baidu.com/"
           },
           {
             "type": "view",
-            "name": "ÌåÓı¶ÍÁ¶",
-            "url": ""
+            "name": "é˜³å…‰ä½“è‚²",
+            "url": "https://www.baidu.com/"
           },
           {
             "type": "view",
-            "name": "ĞŞ¸ÄÕËºÅ",
-            "url": ""
+            "name": "auth",
+            "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxdfba50ee9864437f&redirect_uri=http://test.wx.zjuqsc.com/auth&response_type=code&scope=snsapi_base&state=223#wechat_redirect"
           }
         ]
       },
 
       {
-        "name": "Ñ§ÔÚÕã´ó",
+        "name": "å­¦åœ¨æµ™é‡Œ",
         "sub_button": [
           {
             "type": "view",
-            "name": "×Ê¸ñ¿¼ÊÔ",
-            "url": ""
+            "name": "è¯¾è¡¨æŸ¥è¯¢",
+            "url": "https://www.baidu.com/"
           },
           {
             "type": "view",
-            "name": "×â½è½ÌÊÒ",
-            "url": ""
+            "name": "æˆç»©æŸ¥è¯¢",
+            "url": "https://www.baidu.com/"
           },
           {
             "type": "view",
-            "name": "Ñ§Ï°×ÊÁÏ",
-            "url": ""
+            "name": "æˆ‘çš„è€ƒè¯•",
+            "url": "https://www.baidu.com/"
+          },
+          {
+            "type":"view",
+            "name":"å­¦ä¹ èµ„æ–™",
+            "url": "https://www.baidu.com/"
           }
         ]
       },
 
       {
-        "name": "Õã´óÉú»î",
+        "name": "æ½®åœ¨æµ™é‡Œ",
         "sub_button": [
           {
             "type": "view",
-            "name": "ËÄ´ó²úÆ·",
-            "url": ""
+            "name": "å››å¤§äº§å“",
+            "url": "https://www.baidu.com/"
           },
           {
             "type": "view",
-            "name": "³¡¹İ¿ª·Å",
-            "url": ""
+            "name": "ç»„ç»‡çº³æ–°",
+            "url": "https://www.baidu.com/"
           },
           {
             "type": "view",
-            "name": "ÓÎÏ·×ÀÓÎ",
-            "url": ""
+            "name": "åœºé¦†æŸ¥è¯¢",
+            "url": "https://www.baidu.com/"
           },
           {
             "type": "view",
-            "name": "ÄÉĞÂ»î¶¯",
-            "url": ""
+            "name": "æ ¡å›­é€šè®¯å½•",
+            "url": "https://www.baidu.com/"
           }
         ]
       }
 
-    
+
   ]
+}
 }
 
  

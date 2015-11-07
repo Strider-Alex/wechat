@@ -9,6 +9,7 @@ var wechat=require("wechat")
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var auth = require('./routes/auth')
 var app = express();
 
 // view engine setup
@@ -27,6 +28,7 @@ app.use(express.query())
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/auth', auth);
 
 
 
@@ -50,13 +52,38 @@ app.use('/wechat', wechat("youwillneverguess", function (req, res, next){
     var message=req.weixin;
     //response
     if (message.MsgType==="text"){
-        res.reply("You're talking to me.");
+        if(/^\bbox\b\s+([\d\w]*)$/g.test(message.Content))
+        {
+            var https = require('https');
+            var options = {
+                hostname: 'api.zjuqsc.com',
+                port: 443,
+                path: '/box/get_api/'+/^\bbox\b\s+([\d\w_]*)$/g.exec(message.Content)[1],
+                method: 'GET'
+            };
+            var box_req = https.request(options, function(box_res) {
+                box_res.on('data', function(data) {
+                    var box_file=JSON.parse(data);
+                    if(box_file.err==0)
+                    {
+                        res.reply('下载<a href="http://box.zjuqsc.com/-'+/^\bbox\b\s+([\d\w_]*)$/g.exec(message.Content)[1]+'">'+box_file.info.filename+'</a>');
+                    }
+                    else
+                    {
+                        res.reply('该文件不存在');
+                    }
+                });
+            });
+            box_req.end();
+        }
+        else
+          res.reply("You're talking to me.<a href='https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxdfba50ee9864437f&redirect_uri=http://test.wx.zjuqsc.com/auth&response_type=code&scope=snsapi_base&state=223#wechat_redirect'>auth</a>");
     }
     //welcome new user
-    if((message.MsgType == 'event') && (message.Event == 'subscribe')){  
-        res.reply("welcome");  
+    if((message.MsgType == 'event') && (message.Event == 'subscribe')){
+        res.reply("welcome");
     }
-    
+
 }))
 
 // catch 404 and forward to error handler
